@@ -1,6 +1,6 @@
-# Akeem Group
+# Akeem Group Ltd
 
-Premium responsive React website for the planned Akeem Group holding company. German, English, French and Spanish editorial content, three selectable hero stories, a situation-based partnership explorer, interactive principles, a four-stage collaboration journey, a future roadmap, a technology focus area with a detail dialog, an Aid Projects section, and seven FAQs.
+Premium responsive React website for the planned Akeem Group Ltd holding company. German, English, French and Spanish editorial content, three selectable hero stories, a situation-based partnership explorer, interactive principles, a four-stage collaboration journey, a future roadmap, a technology focus area with a detail dialog, an Aid Projects section, and seven FAQs.
 
 The guided enquiry has three stages: topic, business story and contact information. Explorer and hero actions preselect the relevant topic. Back/forward navigation preserves entered values; users can review, edit and copy their prepared enquiry. Nothing is sent to a server.
 
