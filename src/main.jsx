@@ -19,7 +19,7 @@ copy.en.nav.splice(3,0,'Aid projects');
 copy.de.companies=copy.de.companies.slice(1);
 copy.en.companies=copy.en.companies.slice(1);
 const photos={hero:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85', about:'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85', services:'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85', tech:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85'};
-function Logo(){return <a className="logo" href="#home" aria-label="Akeem Group Ltd home"><span className="monogram">A<span/></span><span className="wordmark">AKEEM<span>GROUP LTD</span></span></a>}
+function Logo(){return <a className="logo" href="#home" aria-label="Akeem Group Ltd home"><img className="brand-logo" src="/akeem-logo.png" alt="" width="980" height="840"/><span className="wordmark">AKEEM<span>GROUP LTD</span></span></a>}
 function App(){const [lang,setLang]=useState('de'),[menu,setMenu]=useState(false),[faq,setFaq]=useState(-1),[modal,setModal]=useState(null);const t=copy[lang]; const dialogRef=useRef(null);
 useEffect(()=>{document.documentElement.lang=lang;document.title='Akeem Group Ltd - '+ui[lang].title;document.querySelector('meta[name=description]')?.setAttribute('content',copy[lang].about)},[lang]);
 useEffect(()=>{if(!modal)return;dialogRef.current?.showModal();const close=e=>{if(e.key==='Escape')setModal(null)};document.addEventListener('keydown',close);return()=>document.removeEventListener('keydown',close)},[modal]);

@@ -1,0 +1,22 @@
+{
+  "name": "akeem-welfare-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "node": "^22.23.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sanity": "^6.21.0",
+    "styled-components": "^6.1.15"
+  },
+  "overrides": {
+    "js-yaml@^3": "3.15.2",
+    "smol-toml": "1.9.1",
+    "undici@^7": "7.30.1"
+  }
+}

@@ -15,6 +15,16 @@ npm run dev
 
 Production build: `npm run build`. Preview: `npm run preview`.
 
+## Deploy to Vercel
+
+Import the repository with its root as the Root Directory, not `studio/`. `vercel.json` configures Vite, `npm ci`, `npm run build` and output `dist`. The tracked `.env.production` supplies the public Sanity project ID and production dataset; no API secret is required. Vercel environment variables can override these values.
+
+After deployment, add the exact HTTPS website origin under Sanity project settings → API → CORS origins, with credentials disabled. Custom domains and preview origins each need their own permission. Until allowed, the website falls back to the original welfare text. The editing Studio is a separate deployment; deploying the root does not host the client dashboard. Published content and photos appear on website reload without rebuilding.
+
+## Welfare content dashboard
+
+Welfare projects now support Sanity content, cover photos, galleries, location, status and DE/EN/FR/ES translations. See [studio/README.md](studio/README.md) for account connection and publishing instructions. Copy `.env.example` to `.env.local` and supply your public Sanity project ID and dataset; existing content stays visible until configured. The separate `studio/` app provides the editing dashboard. No account is connected by default. `studio/seed.ndjson` contains the existing website text for optional import, not an export from Contentful.
+
 Browser verification: with the dev server on port 5173 and Microsoft Edge installed, run `node scripts/qa.cjs`. It checks hero chapters, language switching, the explorer's context handoff, enquiry stages and preserved values, review/edit, principles, process steps, roadmap, technology details, FAQs, dialogs, mobile navigation, image loading, runtime errors and overflow at 1440, 390 and 360 pixels. Screenshots are saved under `scripts/` and ignored by Git.
 
 ## Content and launch
