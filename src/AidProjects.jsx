@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Droplets, HeartHandshake, ArrowUpRight } from 'lucide-react';
 import {fetchWelfare, imageUrl, localized, welfareEndpoint} from './welfare-cms.js';
 import './welfare.css';
+import {WelfareSlider} from './WelfareSlider.jsx';
 
 const copy = {
  de:{label:'HILFSPROJEKTE',title:'Verantwortung kennt',accent:'keine Grenzen.',intro:'Unser Engagement reicht über Unternehmen hinaus: Wir unterstützen den Brunnenbau in Afrika und helfen Kindern.',projects:[['Brunnen in Afrika','Wasser schafft Perspektiven.','Unser Engagement für den Bau von Brunnen in Afrika.'],['Kindern helfen','Chancen für die nächste Generation.','Kinder unterstützen und ihnen neue Perspektiven ermöglichen.']],photos:'Einblicke und Fotos unserer Hilfsprojekte folgen.',cta:'Über Hilfsprojekte sprechen'},
@@ -53,7 +54,7 @@ export function AidProjects({lang}) {
  const projects = remote ?? t.projects.map((p,i) => ({_id:`fallback-${i}`,title:p[0],summary:p[1],description:p[2],category:i===0?'water':'children'}));
  return <section id="aid-projects" className="section aid-projects"><div className="container">
   <p className="section-label">{t.label}</p><div className="section-heading"><h2>{t.title}<br/><em>{t.accent}</em></h2><p>{t.intro}</p></div>
-  <div className="aid-grid">{projects.map((project,index) => {
+  <WelfareSlider lang={lang}>{projects.map((project,index) => {
    const Icon = project.category === 'water' ? Droplets : HeartHandshake;
    const title = localized(project.title, lang);
    const gallery = Array.isArray(project.gallery) ? project.gallery.filter(p => p && imageUrl(p.url)) : [];
@@ -68,7 +69,7 @@ export function AidProjects({lang}) {
      {gallery.length > 0 && <div className="aid-gallery" role="group" aria-label={`${l.gallery}: ${title}`}>{gallery.map((photo,i) => <Photo key={photo._key || i} photo={photo} lang={lang} fallback={title}/>)}</div>}
     </details>}
    </article>;
-  })}</div>
+  })}</WelfareSlider>
   {remote?.length === 0 && <p className="aid-empty">{l.empty}</p>}
   <div className="aid-footer">{remote === null && <p>{t.photos}</p>}<button className="text-link" onClick={()=>{window.dispatchEvent(new CustomEvent('akeem-enquiry',{detail:3}));document.getElementById('contact')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}}>{t.cta}<ArrowUpRight size={18}/></button></div>
  </div></section>;
