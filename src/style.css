@@ -11,5 +11,6 @@
 .whatsapp-contact{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:calc(24px + env(safe-area-inset-bottom));z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#128c4a;color:#fff;box-shadow:0 4px 18px #102c3033;transition:transform .2s,background .2s}.whatsapp-contact:hover{background:#0b713b;transform:translateY(-3px)}.whatsapp-contact:focus-visible{outline:3px solid var(--gold);outline-offset:4px}@media(max-width:650px){.whatsapp-contact{right:max(16px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:54px;height:54px}.footer-bottom{padding-bottom:90px}}
 
 /* Blend the scaled logo wrapper with the footer as well as the image itself. */
+.legal-details{white-space:pre-line}
 .logo{mix-blend-mode:multiply}
 .brand-logo{display:block;width:64px;height:auto;flex-shrink:0;mix-blend-mode:multiply}@media(max-width:650px){.brand-logo{width:48px}}
